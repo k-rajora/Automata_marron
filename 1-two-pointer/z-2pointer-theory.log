@@ -1,0 +1,142 @@
+### 🔹 Very short basics (DSA)
+
+**Data Structure:** A way to store and organize data so it can be used efficiently.
+**Algorithm:** A step-by-step procedure to solve a problem using data.
+
+---
+
+## 🔹 Two Pointer Pattern (Python context)
+
+### Simple definition
+
+The **Two Pointer pattern** uses **two indices (pointers)** to traverse a data structure (usually a list or string) from **different directions** to solve problems efficiently without extra memory.
+
+---
+
+## 🔹 Where it is used (Use cases)
+
+In Python, two pointers are commonly used when:
+
+* The data is **sorted**
+* You need to **find pairs or ranges**
+* You want to **reduce time complexity**
+
+**Common problems:**
+
+* Pair sum (e.g., two numbers sum to target)
+* Removing duplicates from sorted list
+* Reversing arrays/strings
+* Checking palindrome
+* Sliding window variants (with modification)
+
+---
+
+## 🔹 Core Algorithm (Pattern)
+
+```text
+1. Initialize left = 0
+2. Initialize right = n - 1
+
+3. WHILE left < right:
+       IF condition satisfied:
+            return result
+       ELSE IF need larger value:
+            left += 1
+       ELSE:
+            right -= 1
+
+4. End loop
+```
+
+---
+
+## 🔹 Algorithm Diagram (Picture Mode)
+
+![Image](https://media.licdn.com/dms/image/v2/D4E12AQEVGmPlfO88aw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1702349803687?e=2147483647\&t=vhRq2k0m4l0uqkQs0n9YXsILmpsGECpJxHvIOHUmwbY\&v=beta\&utm_source=chatgpt.com)
+
+![Image](https://cdn.emre.me/2019-10-21-two-pointers.png?utm_source=chatgpt.com)
+
+![Image](https://media.geeksforgeeks.org/wp-content/uploads/20240930115147/two-pointer-tech-1.webp?utm_source=chatgpt.com)
+
+**Explanation of diagram:**
+
+* `left` starts from the beginning
+* `right` starts from the end
+* Pointers move inward based on condition
+* No nested loops needed
+
+---
+
+## 🔹 Python Example (Pair Sum)
+
+```python
+arr = [1, 2, 4, 6, 8, 9]
+target = 10
+
+left, right = 0, len(arr) - 1
+
+while left < right:
+    current_sum = arr[left] + arr[right]
+
+    if current_sum == target:
+        print(arr[left], arr[right])
+        break
+    elif current_sum < target:
+        left += 1
+    else:
+        right -= 1
+```
+
+---
+
+## 🔹 Time & Space Complexity
+
+* **Time Complexity:** `O(n)`
+* **Space Complexity:** `O(1)` (no extra memory)
+
+This is why it is preferred over brute force `O(n²)` solutions.
+
+---
+
+## 🔹 When Two Pointer Performs Poorly
+
+Two pointer **does NOT work well** when:
+
+* Data is **unsorted**
+* You need to track **all subarrays**
+* Frequent random access is required
+* Conditions depend on **previous states**
+
+---
+
+## 🔹 Patterns That Fix These Limitations
+
+| Problem Type            | Better Pattern       |
+| ----------------------- | -------------------- |
+| Unsorted array          | Hashing (set / dict) |
+| Subarrays / ranges      | Sliding Window       |
+| Optimal decision making | Greedy               |
+| Complex choices         | Dynamic Programming  |
+| Graph traversal         | BFS / DFS            |
+
+---
+
+## 🔹 Summary (Python mindset)
+
+* Use **Two Pointer** when data is sorted
+* Think **left + right → move inward**
+* It saves **time and memory**
+* Combine with **Sliding Window** for advanced problems
+
+If you want, next we can do **5 must-solve Python questions** on Two Pointer for interviews 🚀
+
+
+
+where it will be applied (99.99%) ✅✅✅✅✅
+Array/LinkedList
+
+where it will not be applied(99.99%) ❌❌❌❌❌
+tree 
+Graph
+STACK
+DP
